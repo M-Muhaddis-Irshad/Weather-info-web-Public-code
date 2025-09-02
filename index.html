@@ -19,14 +19,48 @@
 
 <body>
 
-    <div class="body_1st_div container">
+    <div class="body_container container">
 
-        <div class="inp_cntnr">
-            <input type="text" name="" id="user_value" class="input">
+        <div class="child_1st">
+            <input type="text" name="" id="user_value" class="input" placeholder="Enter your city name">
 
             <a onclick="weatherData()" href="#">
                 <i class="fa-solid fa-magnifying-glass search_btn"></i>
             </a>
+        </div>
+
+        <div class="child_2nd mt-4 hide" id="info_div">
+
+            <div class="div_1">
+
+                <h2 id="temp">
+                    temperature
+                </h2>
+
+                <h2 id="feel">
+                    feels like
+                </h2>
+
+            </div>
+
+            <div class="city_name">
+                <h2 id="city">
+                    ${input.value}
+                </h2>
+            </div>
+
+            <div class="div_2">
+
+                <h2 id="weather">
+                    weather
+                </h2>
+
+                <h2 id="humidity">
+                    humidity
+                </h2>
+
+            </div>
+
         </div>
 
     </div>
