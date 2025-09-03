@@ -75,6 +75,7 @@ const weatherData = async () => {
     //     });
     // }
 
+    input.value = "";
 }
 
 // function conditions(params) {
@@ -84,6 +85,7 @@ const weatherData = async () => {
 input.addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
         weatherData()
+        input.value = "";
     }
 })
 

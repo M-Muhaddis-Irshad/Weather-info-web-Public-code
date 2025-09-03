@@ -4,8 +4,9 @@
 }
 
 body {
-    background-image: url(files_related_to_project/bg_gifs/cloudy.gif);
-    background-image: linear-gradient(25deg, rgb(49, 191, 238), deepskyblue, rgb(0, 157, 209), rgb(0, 118, 165), rgb(0, 101, 141), rgb(0, 100, 139));
+    /* background-image: url(files_related_to_project/bg_gifs/cloudy.gif);
+    background-image: linear-gradient(25deg, rgb(49, 191, 238), deepskyblue, rgb(0, 157, 209), rgb(0, 118, 165), rgb(0, 101, 141), rgb(0, 100, 139)); */
+    background-color: rgb(182, 182, 182) !important;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -15,20 +16,29 @@ body {
     height: 100vh;
 }
 
-
 .body_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* (Body 1st) container start's_________________________________________________________________ */
+
+.body_1st_container {
     backdrop-filter: blur(5px);
-    border-radius: 5vw;
     padding: 40px;
     box-shadow: 4px -4px 10px rgb(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    /* justify-content: center; */
+    max-width: 800px !important;
+    border-radius: 5px;
+    border: 3px solid black;
+    overflow: hidden;
 }
 
-/* Body container 1st child start's_________________________________________ */
+/* (Body 1st) container 1st child start's_________________________________________ */
 
 .child_1st {
     margin-inline: auto;
@@ -82,9 +92,10 @@ body {
     color: rgba(255, 255, 255, 0.685);
 }
 
-/* Body container 1st child end's_________________________________________ */
 
-/* Body container 2nd child start's_________________________________________ */
+/* (Body 1st) container 1st child end's_________________________________________ */
+
+/* (Body 1st) container 2nd child start's_________________________________________ */
 
 .child_2nd {
     display: flex;
@@ -111,7 +122,7 @@ body {
 
 /* (2nd child) 2nd div css start's______________ */
 
-.div_2 {
+.div_3 {
     /* background-color: white; */
     display: flex;
     justify-content: space-between;
@@ -120,15 +131,200 @@ body {
     /* width: 50vw; */
 }
 
-.hide {
-    display: none;
-}
-
-h2 {
+h4 {
     color: rgba(255, 255, 255, 0.85) !important;
     cursor: pointer;
 }
 
 /* (2nd child) 2nd div css end's______________ */
 
-/* Body container 2nd child end's_________________________________________ */
+/* (Body 1st) container 2nd child end's_________________________________________ */
+
+/* (Body 1st) container 3rd child start's_________________________________________ */
+
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+
+.background {
+    position: fixed;
+    width: 630px;
+    height: 340px;
+    top: 0;
+    left: 0;
+    background: #4CB8B6;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.ball {
+    position: absolute;
+    width: 20vmin;
+    height: 20vmin;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    animation: move linear infinite;
+}
+
+.ball:nth-child(odd) {
+    color: #006D5B;
+}
+
+.ball:nth-child(even) {
+    color: #FF6F61;
+}
+
+/* Using a custom attribute for variability */
+.ball:nth-child(1) {
+    top: 77%;
+    left: 88%;
+    animation-duration: 40s;
+    animation-delay: -3s;
+    transform-origin: 16vw -2vh;
+    box-shadow: 40vmin 0 5.703076368487546vmin currentColor;
+}
+
+.ball:nth-child(2) {
+    top: 42%;
+    left: 2%;
+    animation-duration: 53s;
+    animation-delay: -29s;
+    transform-origin: -19vw 21vh;
+    box-shadow: -40vmin 0 5.17594621519026vmin currentColor;
+}
+
+.ball:nth-child(3) {
+    top: 28%;
+    left: 18%;
+    animation-duration: 49s;
+    animation-delay: -8s;
+    transform-origin: -22vw 3vh;
+    box-shadow: 40vmin 0 5.248179047256236vmin currentColor;
+}
+
+.ball:nth-child(4) {
+    top: 50%;
+    left: 79%;
+    animation-duration: 26s;
+    animation-delay: -21s;
+    transform-origin: -17vw -6vh;
+    box-shadow: 40vmin 0 5.279749632220298vmin currentColor;
+}
+
+.ball:nth-child(5) {
+    top: 46%;
+    left: 15%;
+    animation-duration: 36s;
+    animation-delay: -40s;
+    transform-origin: 4vw 0vh;
+    box-shadow: -40vmin 0 5.964309466052033vmin currentColor;
+}
+
+.ball:nth-child(6) {
+    top: 77%;
+    left: 16%;
+    animation-duration: 31s;
+    animation-delay: -10s;
+    transform-origin: 18vw 4vh;
+    box-shadow: 40vmin 0 5.178483653434181vmin currentColor;
+}
+
+.ball:nth-child(7) {
+    top: 22%;
+    left: 17%;
+    animation-duration: 55s;
+    animation-delay: -6s;
+    transform-origin: 1vw -23vh;
+    box-shadow: -40vmin 0 5.703026794398318vmin currentColor;
+}
+
+.ball:nth-child(8) {
+    top: 41%;
+    left: 47%;
+    animation-duration: 43s;
+    animation-delay: -28s;
+    transform-origin: 25vw -3vh;
+    box-shadow: 40vmin 0 5.196265905749415vmin currentColor;
+}
+
+/* (Body 1st) container 3rd child end's_________________________________________ */
+
+
+/* (Body 1st) container end's_________________________________________________________________ */
+
+/* (Body 2nd) container start's_________________________________________ */
+
+.body_2nd_container {
+    border: 2px solid black;
+    border-top: none;
+    border-radius: 0px 0px 40px 40px;
+    width: 500px;
+    max-width: 500px;
+    height: 20px;
+    position: relative;
+}
+
+.power_btn {
+    padding: 2px;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.line {
+    background-color: white;
+    width: 0.8px;
+    height: 3px !important;
+    margin-bottom: -2px;
+}
+
+.half_circle {
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 5px !important;
+    max-width: 5px;
+    height: 5px;
+}
+
+/* (Body 2nd) container end's_________________________________________ */
+
+/* (Body 3rd) container start's_________________________________________ */
+
+.body_3rd_container {
+    border: 2px solid black;
+    border-top: none;
+    border-bottom: none;
+    width: 200px;
+    max-width: 140px;
+    height: 50px;
+}
+
+/* (Body 3rd) container end's_________________________________________ */
+
+/* (Body 4th) container start's_________________________________________ */
+
+.body_4th_container {
+    border: 2px solid black;
+    /* border-top: none; */
+    border-radius: 5px 5px 0px 0px;
+    width: 200px;
+    max-width: 200px;
+    height: 20px;
+}
+
+/* (Body 4th) container end's_________________________________________ */
+
+.hide {
+    display: none;
+}
+
+
+@media screen {
+    
+}

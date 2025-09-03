@@ -19,51 +19,96 @@
 
 <body>
 
-    <div class="body_container container">
+    <div class="body_container">
 
-        <div class="child_1st">
-            <input type="text" name="" id="user_value" class="input" placeholder="Enter your city name">
+        <!-- Body 1st Child Start's__________________________________ -->
+        <div class="body_1st_container">
 
-            <a onclick="weatherData()" href="#">
-                <i class="fa-solid fa-magnifying-glass search_btn"></i>
-            </a>
+            <div class="child_1st">
+                <input type="text" name="" id="user_value" class="input" placeholder="Enter your city name">
+
+                <a onclick="weatherData()" href="#">
+                    <i class="fa-solid fa-magnifying-glass search_btn"></i>
+                </a>
+            </div>
+
+            <div class="child_2nd mt-4 " id="info_div">
+
+                <div class="div_1">
+
+                    <h4 id="temp">
+                        temperature
+                    </h4>
+
+                    <h4 id="feel">
+                        feels like
+                    </h4>
+
+                </div>
+
+                <div class="div_2 city_name">
+                    <h4 id="city">
+                        ${input.value}
+                    </h4>
+                </div>
+
+                <div class="div_3">
+
+                    <h4 id="weather">
+                        weather
+                    </h4>
+
+                    <h4 id="humidity">
+                        humidity
+                    </h4>
+
+                </div>
+
+            </div>
+
+            <div class="background">
+                <!-- Using common classes to minimize redundancy -->
+                <span class="ball"></span>
+                <span class="ball"></span>
+                <span class="ball"></span>
+                <span class="ball"></span>
+                <span class="ball"></span>
+                <span class="ball"></span>
+            </div>
+
         </div>
+        <!-- Body 1st Child End's__________________________________ -->
 
-        <div class="child_2nd mt-4 hide" id="info_div">
 
-            <div class="div_1">
+        <!-- Body 2nd Child Start's__________________________________ -->
+        <div class="body_2nd_container">
 
-                <h2 id="temp">
-                    temperature
-                </h2>
-
-                <h2 id="feel">
-                    feels like
-                </h2>
-
-            </div>
-
-            <div class="city_name">
-                <h2 id="city">
-                    ${input.value}
-                </h2>
-            </div>
-
-            <div class="div_2">
-
-                <h2 id="weather">
-                    weather
-                </h2>
-
-                <h2 id="humidity">
-                    humidity
-                </h2>
-
+            <div class="power_btn">
+                <span class="line"></span>
+                <span class="half_circle"></span>
             </div>
 
         </div>
+        <!-- Body 2nd Child End's__________________________________ -->
+
+
+
+        <!-- Body 3rd Child Start's__________________________________ -->
+        <div class="body_3rd_container">
+
+        </div>
+        <!-- Body 3rd Child End's__________________________________ -->
+
+
+
+        <!-- Body 4th Child Start's__________________________________ -->
+        <div class="body_4th_container">
+
+        </div>
+        <!-- Body 4th Child End's__________________________________ -->
 
     </div>
+
 
     <!-- My Javascript Link -->
     <script src="app.js"></script>
