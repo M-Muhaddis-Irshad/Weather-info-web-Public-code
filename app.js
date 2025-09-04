@@ -90,7 +90,11 @@ input.addEventListener('keypress', function (event) {
 })
 
 
+const powerBtn = document.getElementById('power_btn');
 
+function power_btn(params) {
+    
+}
 
 
 // document.getElementById('info_div').style.display = "flex"

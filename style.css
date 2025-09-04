@@ -4,9 +4,9 @@
 }
 
 body {
-    /* background-image: url(files_related_to_project/bg_gifs/cloudy.gif);
-    background-image: linear-gradient(25deg, rgb(49, 191, 238), deepskyblue, rgb(0, 157, 209), rgb(0, 118, 165), rgb(0, 101, 141), rgb(0, 100, 139)); */
-    background-color: rgb(182, 182, 182) !important;
+    /* background-image: url(files_related_to_project/bg_gifs/cloudy.gif); */
+    /* background-color: rgb(182, 182, 182) !important; */
+    background-image: linear-gradient(25deg, rgb(49, 191, 238), deepskyblue, rgb(0, 157, 209), rgb(0, 118, 165), rgb(0, 101, 141), rgb(0, 100, 139));
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -20,35 +20,31 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    filter: drop-shadow(8px -4px 5px rgb(0, 0, 0, 0.5));
 }
 
 /* (Body 1st) container start's_________________________________________________________________ */
 
-.body_1st_container {
-    backdrop-filter: blur(5px);
-    padding: 40px;
-    box-shadow: 4px -4px 10px rgb(0, 0, 0, 0.3);
+.screen {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     max-width: 800px !important;
+    padding: 40px;
+    border: 3px solid rgba(0, 0, 0, 0.411);
+    /* border: 3px solid black; */
     border-radius: 5px;
-    border: 3px solid black;
+    backdrop-filter: blur(5px);
     overflow: hidden;
 }
 
 /* (Body 1st) container 1st child start's_________________________________________ */
 
-.child_1st {
+.input_container {
     margin-inline: auto;
     display: flex;
     align-items: center;
     gap: 2.2vw;
-
-    /* box-shadow: 0px 0px 5px rgb(0,0,0, 0.3);
-    padding: 10px;
-    border-radius: 10px; */
 }
 
 .search_btn {
@@ -95,40 +91,34 @@ body {
 
 /* (Body 1st) container 1st child end's_________________________________________ */
 
-/* (Body 1st) container 2nd child start's_________________________________________ */
+/* (Body 1st) container (Weather_info) start's_________________________________________ */
 
-.child_2nd {
+.Weather_info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
 }
 
 /* (2nd child) 1st div css start's______________ */
 
 .div_1 {
-    /* background-color: white; */
     display: flex;
     justify-content: space-between;
     gap: 300px;
     padding: 10px;
-    /* width: 50vw; */
 }
 
 /* (2nd child) 1st div css end's______________ */
 
-
 /* (2nd child) 2nd div css start's______________ */
 
 .div_3 {
-    /* background-color: white; */
     display: flex;
     justify-content: space-between;
     gap: 300px;
-    padding: 10px;
-    /* width: 50vw; */
 }
 
 h4 {
@@ -138,7 +128,7 @@ h4 {
 
 /* (2nd child) 2nd div css end's______________ */
 
-/* (Body 1st) container 2nd child end's_________________________________________ */
+/* (Body 1st) container (Weather_info) end's_________________________________________ */
 
 /* (Body 1st) container 3rd child start's_________________________________________ */
 
@@ -254,15 +244,16 @@ h4 {
 
 /* (Body 1st) container end's_________________________________________________________________ */
 
-/* (Body 2nd) container start's_________________________________________ */
+/* (Buttons_area) start's_________________________________________ */
 
-.body_2nd_container {
-    border: 2px solid black;
-    border-top: none;
-    border-radius: 0px 0px 40px 40px;
+.buttons_area {
     width: 500px;
     max-width: 500px;
     height: 20px;
+    border: 2px solid rgba(0, 0, 0, 0.411);
+    border-top: none;
+    border-radius: 0px 0px 40px 40px;
+    background-image: linear-gradient(90deg, rgb(47, 203, 255), rgb(39, 158, 197), rgb(0, 139, 185));
     position: relative;
 }
 
@@ -272,9 +263,15 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 10px;
+    justify-content: center;
+    /* width: 10px; */
     border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+
     position: absolute;
+    right: 10px;
+    top: 3px;
 }
 
 .line {
@@ -286,18 +283,21 @@ h4 {
 
 .half_circle {
     border: 1px solid white;
+    border-top: none;
     border-radius: 50%;
-    width: 5px !important;
-    max-width: 5px;
-    height: 5px;
+    width: 6px !important;
+    max-width: 10px;
+    height: 6px;
 }
 
-/* (Body 2nd) container end's_________________________________________ */
+/* (Buttons_area) end's_________________________________________ */
 
-/* (Body 3rd) container start's_________________________________________ */
+/* (Stain_1st) start's_________________________________________ */
 
-.body_3rd_container {
-    border: 2px solid black;
+.stain_1st {
+    /* border: 2px solid black; */
+    border: 2px solid rgba(0, 0, 0, 0.411);
+    background-image: linear-gradient(120deg, rgb(47, 203, 255), rgb(39, 158, 197), rgb(0, 139, 185));
     border-top: none;
     border-bottom: none;
     width: 200px;
@@ -305,26 +305,40 @@ h4 {
     height: 50px;
 }
 
-/* (Body 3rd) container end's_________________________________________ */
+/* (Stain_1st) end's_________________________________________ */
 
-/* (Body 4th) container start's_________________________________________ */
+/* (Stain_2nd) start's_________________________________________ */
 
-.body_4th_container {
-    border: 2px solid black;
+.stain_2nd {
+    /* border: 2px solid black; */
     /* border-top: none; */
     border-radius: 5px 5px 0px 0px;
-    width: 200px;
+    border: 2px solid rgba(0, 0, 0, 0.411);
+    background-image: linear-gradient(120deg, rgb(47, 203, 255), rgb(39, 158, 197), rgb(0, 139, 185));    width: 200px;
     max-width: 200px;
     height: 20px;
 }
 
-/* (Body 4th) container end's_________________________________________ */
+/* (Stain_2nd) end's_________________________________________ */
 
 .hide {
     display: none;
 }
 
+/* Media Queries start's__________________________________________________ */
 
-@media screen {
-    
+@media only screen and (min-width: 2160px) {
+    .background {
+        width: 730px;
+        height: 360px;
+    }
 }
+
+@media only screen and (min-width: 2560px) {
+    .background {
+        width: 760px;
+        height: 360px;
+    }
+}
+
+/* Media Queries end's__________________________________________________ */
