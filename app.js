@@ -90,10 +90,18 @@ input.addEventListener('keypress', function (event) {
 })
 
 
+const screen = document.getElementById('Screen');
 const powerBtn = document.getElementById('power_btn');
 
 function power_btn(params) {
-    
+    if (!powerBtn.classList.contains('red')) {
+        powerBtn.classList.add('red')
+        screen.classList.add('d_none')
+    }
+    else{
+        powerBtn.classList.remove('red')
+        screen.classList.remove('d_none')
+    }
 }
 
 
