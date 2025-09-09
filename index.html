@@ -9,6 +9,15 @@
     <!-- My Css Link -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- FavIcon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="files_related_to_project/favIcon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="files_related_to_project/favIcon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="files_related_to_project/favIcon/favicon-16x16.png">
+    <link rel="manifest" href="files_related_to_project/favIcon/site.webmanifest">
+
+    <!-- Google Icons Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet" />
+
     <!-- FontAwesome Link -->
     <script src="https://kit.fontawesome.com/bdc08be0ff.js" crossorigin="anonymous"></script>
 
@@ -24,7 +33,7 @@
         <!-- Body 1st Child Start's__________________________________ -->
         <div class="screen body_1st_child" id="Screen">
 
-            <div class="input_container scr_child">
+            <div class="input_container screen_child">
                 <input type="text" name="" id="user_value" class="input" placeholder="Enter your city name">
 
                 <a onclick="weatherData()" href="#">
@@ -32,41 +41,41 @@
                 </a>
             </div>
 
-            <div class="Weather_info scr_child" id="info_div">
+            <div class="Weather_info screen_child hide" id="info_div">
 
-                <div class="div_1">
+                <div class="headingContainer_1">
 
-                    <h4 id="temp">
+                    <h5 id="temp">
                         temperature
-                    </h4>
+                    </h5>
 
-                    <h4 id="feel">
+                    <h5 id="feel">
                         feels like
-                    </h4>
+                    </h5>
 
                 </div>
 
-                <div class="div_2 city_name">
-                    <h4 id="city">
+                <div class="headingContainer_2 city_name">
+                    <h5 id="city">
                         ${input.value}
-                    </h4>
+                    </h5>
                 </div>
 
-                <div class="div_3">
+                <div class="headingContainer_3">
 
-                    <h4 id="weather">
-                        weather
-                    </h4>
+                    <h5 id="cloud">
+                        Cloud
+                    </h5>
 
-                    <h4 id="humidity">
+                    <h5 id="humidity">
                         humidity
-                    </h4>
+                    </h5>
 
                 </div>
 
             </div>
 
-            <div class="background">
+            <div class="background" id="wallpapper">
                 <!-- Using common classes to minimize redundancy -->
                 <span class="ball"></span>
                 <span class="ball"></span>
@@ -83,10 +92,8 @@
         <!-- Body 2nd Child Start's__________________________________ -->
         <div class="buttons_area">
 
-            <div onclick="power_btn()" id="power_btn" class="power_btn" title="Turn Off the display" >
-                <span class="line"></span>
-                <span class="half_circle"></span>
-            </div>
+            <span onclick="power_btn()" id="power_btn" class="power_btn material-symbols-sharp"
+                title="Turn Off the display">mode_off_on</span>
 
         </div>
         <!-- Body 2nd Child End's__________________________________ -->

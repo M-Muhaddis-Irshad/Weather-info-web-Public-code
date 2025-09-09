@@ -1,29 +1,28 @@
+const body = document.body;
+
 const input = document.getElementById('user_value');
+
+const screen = document.getElementById('Screen');
+
+const screenBg = document.getElementById("wallpapper");
 
 // Headings Start's__________________
 
 let temp_cntnr = document.getElementById("temp");
 let feel_cntnr = document.getElementById("feel");
 let city_cntnr = document.getElementById("city");
-let weather_cntnr = document.getElementById("weather");
+let cloud_cntnr = document.getElementById("cloud");
 let humidity_cntnr = document.getElementById("humidity");
 
 // Headings End's__________________
 
-// Conditions block Start's__________________
-
-let temp = "";
-let feelLike = "";
-let weather = "";
-let humidity = "";
-
-// Conditions block End's__________________
-
-let flg = true;
-
 const weatherData = async () => {
 
-    if (!input.value.trim()) {
+    if (input.value === 'clear') {
+        body.style.backgroundImage = 'linear-gradient(25deg, rgb(49, 191, 238), deepskyblue, rgb(0, 157, 209), rgb(0, 118, 165), rgb(0, 101, 141), rgb(0, 100, 139))';
+        screenBg.classList.remove('hide');
+    }
+    else if (!input.value.trim()) {
         Swal.fire({
             icon: "error",
             title: "Oops...",
@@ -36,28 +35,65 @@ const weatherData = async () => {
             const weatherApi = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=a097eb39ebf73787c3b509888e03d178&units=metric`);
             const response = await weatherApi.json()
 
-            console.log(response);
+            // console.log(response);
 
             const { name } = response
             const { temp, feels_like, humidity } = response.main
             const { description } = response.weather[0]
-            console.log(`
-                temperature: ${temp} 
-                feels like: ${feels_like} 
-                humidity: ${humidity} 
-                description: ${description}
-                `);
 
+            temp_cntnr.innerHTML = `Temperature (${temp}<sup>o</sup>C)`;
+            feel_cntnr.innerHTML = `Feels Like (${feels_like}<sup>o</sup>C)`;
+            city_cntnr.innerHTML = `<h4>(${name})<h4>`;
+            cloud_cntnr.innerHTML = `Weather (${description})`;
+            humidity_cntnr.innerHTML = `Humidity (${humidity})%`;
 
-            city_cntnr.innerText = name;
+            if (description === 'overcast clouds') {
+                body.style.backgroundImage = 'url(files_related_to_project/bg_gifs/overCast.gif)';
+                screenBg.classList.add('hide');
+            }
+            else if (description === 'broken clouds') {
+                body.style.backgroundImage = 'url(files_related_to_project/bg_gifs/broken.gif)';
+                screenBg.classList.add('hide');
+            }
+            else if (description === 'clear sky') {
+                body.style.backgroundImage = 'url(files_related_to_project/bg_gifs/clearSky.gif)';
+                screenBg.classList.add('hide');
+            }
+            else if (description === 'few clouds') {
+                body.style.backgroundImage = 'url(files_related_to_project/bg_gifs/fewClouds.gif)';
+                screenBg.classList.add('hide');
+            }
+            else if (description === 'scattered clouds') {
+                body.style.backgroundImage = 'url(files_related_to_project/bg_gifs/scatteredClouds.gif)';
+                screenBg.classList.add('hide');
+            }
+            else if (description === 'light rain') {
+                body.style.backgroundImage = 'url(files_related_to_project/bg_gifs/lightRain.gif)';
+                screenBg.classList.add('hide');
+            }
+            else if (description === 'heavy intensity rain') {
+                body.style.backgroundImage = 'url(files_related_to_project/bg_gifs/heavyRain.gif)';
+                screenBg.classList.add('hide');
+            }
+            else if (description === 'moderate rain') {
+                body.style.backgroundImage = 'url(files_related_to_project/bg_gifs/moderateRain.gif)';
+                screenBg.classList.add('hide');
+            }
+            else if (description === 'Snow') {
+                body.style.backgroundImage = 'url(files_related_to_project/bg_gifs/snow.gif)';
+                screenBg.classList.add('hide');
+            }
+            else {
+                body.style.backgroundImage = 'linear-gradient(25deg, rgb(49, 191, 238), deepskyblue, rgb(0, 157, 209), rgb(0, 118, 165), rgb(0, 101, 141), rgb(0, 100, 139))';
+                screenBg.classList.remove('hide');
+            }
 
+            const infoDiv = document.getElementById('info_div')
 
-            // const {}
+            infoDiv.classList.remove('hide');
+            infoDiv.classList.add('bgBlur');
 
         } catch (error) {
-            // flg = false
-            console.log('false');
-            console.log("failed");
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
@@ -66,21 +102,28 @@ const weatherData = async () => {
         }
     }
 
-    // if (!flg) {
-    //     console.log("failed");
-    //     Swal.fire({
-    //         icon: "error",
-    //         title: "Oops...",
-    //         text: "City name is incorrect",
-    //     });
-    // }
-
     input.value = "";
+
 }
 
-// function conditions(params) {
+// Power Button Start's___________________________________________
 
-// }
+const powerBtn = document.getElementById('power_btn');
+
+function power_btn(params) {
+    if (!powerBtn.classList.contains('red')) {
+        screen.classList.add('d_none');
+        powerBtn.classList.add('red');
+        powerBtn.title = 'Turn On the display';
+    }
+    else {
+        screen.classList.remove('d_none');
+        powerBtn.classList.remove('red');
+        powerBtn.title = 'Turn Off the display';
+    }
+}
+
+// Power Button End's___________________________________________
 
 input.addEventListener('keypress', function (event) {
     if (event.key === 'Enter') {
@@ -88,121 +131,3 @@ input.addEventListener('keypress', function (event) {
         input.value = "";
     }
 })
-
-
-const screen = document.getElementById('Screen');
-const powerBtn = document.getElementById('power_btn');
-
-function power_btn(params) {
-    if (!powerBtn.classList.contains('red')) {
-        powerBtn.classList.add('red')
-        screen.classList.add('d_none')
-    }
-    else{
-        powerBtn.classList.remove('red')
-        screen.classList.remove('d_none')
-    }
-}
-
-
-// document.getElementById('info_div').style.display = "flex"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // let user_location = {
-// //     lat: "",
-// //     long: ""
-// // };
-
-// // let { lat, long } = user_location
-// // // console.log(latitude , longitude);
-
-// // function getUserLocation() {
-
-// //     return new Promise((resolve, reject) => {
-// //         navigator.geolocation.getCurrentPosition((data) => {
-// //             console.log(data);
-// //             const { coords: { latitude }, coords: { longitude } } = data.coords
-// //             // console.log(latitude, longitude);
-// //             lat = latitude;
-// //             long = longitude;
-// //             resolve(lat,long)
-// //         },
-// //             (denied) => {
-// //                 Swal.fire({
-// //                     icon: "error",
-// //                     title: "Oops...",
-// //                     text: "Permission Denied",
-// //                 });
-// //                 reject(denied)
-// //             }
-// //         );
-
-// //     }
-// //     )
-// // }
-
-// // getUserLocation();
-
-// // let flg = true;
-
-// // setTimeout(() => {
-// //     const user_loc = `${lat} ${long}`
-// //     console.log(user_loc);
-// //     if (!user_loc) {
-// //         flg = false;
-// //     }
-// // }, 3000);
-
-// // if (!flg) {
-// //     console.log('passed');
-
-// // }
-
-// // async () => {
-
-// //     if (lat !== "" && long !== "") {
-// //         console.log(true);
-
-// //     }
-// //     else {
-// //         console.log(false);
-
-// //     }
-// // }
-
-
-// _________________________________________________________________
-
-// let arr = [3 , 9,2];
-
-
-// function sum(num1 , num2) {
-//     return num1 * num2
-// }
-
-// sum()
-
-// console.log(sum(arr[2],...arr));
-
-// function square(number) {
-//     return Math.pow(number,2)
-// }
-
-// square()
-
-// console.log(square(3));
