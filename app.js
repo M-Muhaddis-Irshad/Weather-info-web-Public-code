@@ -32,7 +32,7 @@ const weatherData = async () => {
     }
     else {
         try {
-            const weatherApi = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=a097eb39ebf73787c3b509888e03d178&units=metric`);
+            const weatherApi = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=Api-Key&units=metric`);
             const response = await weatherApi.json()
 
             // console.log(response);
